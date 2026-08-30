@@ -30,7 +30,7 @@ public:
         struct
         {
             lv_obj_t* cont;
-            SubInfo_t labelInfoGrp[4];
+            SubInfo_t labelInfoGrp[3];
         } bottomInfo;
 
         struct

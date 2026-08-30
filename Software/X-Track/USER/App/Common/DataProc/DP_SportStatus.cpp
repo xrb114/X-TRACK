@@ -1,9 +1,6 @@
 #include "DataProc.h"
 #include "Utils/Filters/Filters.h"
 #include "../HAL/HAL.h"
-#include "Config/Config.h"
-
-#define CALORIC_CORFFICIENT 0.5f
 
 using namespace DataProc;
 
@@ -71,8 +68,6 @@ static void onTimer(Account* account)
                 sportStatus.speedMaxKph = speedKph;
             }
 
-            float calorie = speedKph * sportStatus.weight * CALORIC_CORFFICIENT * timeElaps / 1000 / 3600;
-            sportStatus.singleCalorie += calorie;
         }
     }
 
@@ -108,7 +103,6 @@ static int onEvent(Account* account, Account::EventParam_t* param)
 DATA_PROC_INIT_DEF(SportStatus)
 {
     memset(&sportStatus, 0, sizeof(sportStatus));
-    sportStatus.weight = CONFIG_WEIGHT_DEFAULT;
 
     account->Subscribe("GPS");
     account->Subscribe("Storage");
@@ -117,7 +111,6 @@ DATA_PROC_INIT_DEF(SportStatus)
     STORAGE_VALUE_REG(account, sportStatus.totalTimeUINT32[0], STORAGE_TYPE_INT);
     STORAGE_VALUE_REG(account, sportStatus.totalTimeUINT32[1], STORAGE_TYPE_INT);
     STORAGE_VALUE_REG(account, sportStatus.speedMaxKph, STORAGE_TYPE_FLOAT);
-    STORAGE_VALUE_REG(account, sportStatus.weight, STORAGE_TYPE_FLOAT);
 
     sportStatus.lastTick = DataProc::GetTick();
 
