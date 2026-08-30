@@ -95,12 +95,11 @@ void DialplateView::BottomInfo_Create(lv_obj_t* par)
 
     ui.bottomInfo.cont = cont;
 
-    const char* unitText[4] =
+    const char* unitText[] =
     {
         "AVG",
         "Time",
-        "Trip",
-        "Calorie"
+        "Trip"
     };
 
     for (int i = 0; i < ARRAY_SIZE(ui.bottomInfo.labelInfoGrp); i++)
@@ -117,7 +116,7 @@ void DialplateView::SubInfoGrp_Create(lv_obj_t* par, SubInfo_t* info, const char
 {
     lv_obj_t* cont = lv_obj_create(par);
     lv_obj_remove_style_all(cont);
-    lv_obj_set_size(cont, 93, 39);
+    lv_obj_set_size(cont, 100, 39);
 
     lv_obj_set_flex_flow(cont, LV_FLEX_FLOW_COLUMN);
     lv_obj_set_flex_align(

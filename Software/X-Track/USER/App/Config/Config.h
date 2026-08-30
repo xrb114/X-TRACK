@@ -33,7 +33,6 @@
 #define CONFIG_SYSTEM_TIME_ZONE_DEFAULT       8    // GMT+ 8
 #define CONFIG_SYSTEM_SOUND_ENABLE_DEFAULT    true
 
-#define CONFIG_WEIGHT_DEFAULT                 65   // kg
 
 #ifdef ARDUINO
 #  define CONFIG_GPS_REFR_PERIOD              1000 // ms

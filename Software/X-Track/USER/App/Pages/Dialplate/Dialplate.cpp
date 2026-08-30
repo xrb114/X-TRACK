@@ -110,11 +110,6 @@ void Dialplate::Update()
         "%0.1f km",
         Model.sportStatusInfo.singleDistance / 1000
     );
-    lv_label_set_text_fmt(
-        View.ui.bottomInfo.labelInfoGrp[3].lableValue,
-        "%d k",
-        int(Model.sportStatusInfo.singleCalorie)
-    );
 }
 
 void Dialplate::onTimerUpdate(lv_timer_t* timer)

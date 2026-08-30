@@ -57,8 +57,6 @@ typedef struct
 {
     uint32_t lastTick;
 
-    float weight;
-
     float speedKph;
     float speedMaxKph;
     float speedAvgKph;
@@ -78,7 +76,6 @@ typedef struct
     };
 
     float singleDistance;
-    float singleCalorie;
     
 } SportStatus_Info_t;
 
